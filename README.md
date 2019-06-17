@@ -1,5 +1,5 @@
 # Wanderland
-![wanderland logo][https://i.imgur.com/52S6vna.png]
+![wanderland logo](https://i.imgur.com/52S6vna.png)
 
 ## How to Get to Wanderland
 
