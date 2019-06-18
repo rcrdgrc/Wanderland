@@ -6,21 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wanderland</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
-<body>
-    <header class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <ul>
-                    <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Wanderland</a></li>
-                </ul>
-                <ul class="right">
-                    <li><a href="{% url 'trips_create' %}">Add a Trip</a></li>
-                    <li><a href="{% url 'index' %}">Trips</a></li>
-                </ul>
-            </div>
+<!-- <body> -->
+    <header>
+        <nav class="flex-container">
+            <h1 class="logo">&nbsp;&nbsp;Wanderland</h1>
+            <ul class="navigation">
+                <li><a href="{% url 'trips_create' %}">Add a Trip</a></li>
+                <li><a href="{% url 'index' %}">Trips</a></li>
+            </ul>
         </nav>
     </header>
     <main class="container">
@@ -30,5 +25,5 @@
   	 <footer class="page-footer">
        <div class="right">All Rights Reserved, &copy; 2019 Wanderland &nbsp;</div>
     </footer>
-</body>
+<!-- </body> -->
 </html>
