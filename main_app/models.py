@@ -12,3 +12,14 @@ class Trip(models.Model):
     
     def get_absolute_url(self):
         return reverse('detail', kwargs={'trip_id': self.id})
+
+class Savings(models.Model):
+    date = models.DateField()
+    amount = models.IntegerField()
+    trip = models.ForeignKey(Trip, on_delete=models.CASCADE)
+
+    def __str__(self):
+    # Nice method for obtaining the friendly value of a Field.choice
+        return f"{self.amount} on {self.date}"
+    
+
