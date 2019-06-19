@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
+<<<<<<< HEAD
 class Task(models.Model):
     due_date = models.DateField('Due Date')
     task = models.CharField(max_length=200)
@@ -11,6 +12,8 @@ class Task(models.Model):
     def __str__(self):
         return self.task
 
+=======
+>>>>>>> a483d028f4f6a6193aecddbe232f10ab129b8492
 
 class Trip(models.Model):
     destination = models.CharField(max_length=100)
