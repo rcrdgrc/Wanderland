@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import uuid
 import boto3
-from .models import Trip, Photo
+from .models import Trip, Photo, Task
 from .forms import SavingsForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -11,6 +11,15 @@ from django.contrib.auth.decorators import login_required
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
 BUCKET = 'wanderland100'
 
+# class Task:
+#     def __init__(self, due_date, task):
+#         self.due_date = due_date
+#         self.task = task
+
+# tasks = [
+#     Task('2020-10-10', 'Tell boss Im on vacay nov 12'),
+#     Task('2020-11-11', 'ask Tina to babysit sparkle'),
+# ]
 
 class TripUpdate(UpdateView):
   model = Trip
@@ -44,6 +53,7 @@ def trips_detail(request, trip_id):
     return render(request, 'trips/detail.html', { 'trip': trip, 'savings_form': savings_form })
   
 def tasks_index(request):
+    tasks = Task.objects.filter(user=request.user)
     return render(request, 'trips/taskpage.html', { 'tasks': tasks })
 
 def home(request):
