@@ -1,6 +1,8 @@
 from django.contrib import admin
-# import your models here
-from .models import Trip
+# Import your models here
+from .models import Trip, Savings, Photo
 
-# Register your models here
+# Register you models here
 admin.site.register(Trip)
+admin.site.register(Savings)
+admin.site.register(Photo)
