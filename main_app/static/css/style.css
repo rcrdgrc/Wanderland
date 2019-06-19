@@ -16,7 +16,7 @@ STYLING */
   z-index: 100;
 }
 
-.navigation{  
+.navigation {  
   width: 100%;
   list-style: none;
   text-align: center;
@@ -33,19 +33,20 @@ STYLING */
 }
 
 #nav { 
-  text-align: center; 
+  text-align: center;
 }
 
 #nav li {
   list-style: none; 
   display: inline-block;
   vertical-align: middle; /*add this line*/
+  padding: 0px 250px;
 }
 
 #nav a {
   color: white; 
   display: block; 
-  font-family:arial; 
+  font-family: arial; 
   text-transform: uppercase; 
   font-weight: bold; 
   margin: 0; 

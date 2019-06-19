@@ -3,16 +3,6 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
-class Task(models.Model):
-    due_date = models.DateField('Due Date')
-    task = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.task
-    
-    class Meta:
-        ordering = ['date']
-
 
 class Trip(models.Model):
     destination = models.CharField(max_length=100)
