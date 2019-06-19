@@ -7,7 +7,9 @@ For more information on this file, see
 https://docs.djangoproject.com/en/2.2/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/2.2/ref/settings/
+https://docs.djangoproject.com/en/2.2/ref/settings/import django_heroku
+django_heroku.settings(locals())
+
 """
 
 import os
@@ -123,6 +125,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/trips/'
 
 LOGOUT_REDIRECT_URL = '/'
+
 
 import django_heroku
 django_heroku.settings(locals())
