@@ -22,8 +22,14 @@ class TripCreate(CreateView):
   fields = '__all__'
   success_url = '/trips/'
 
+  def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+    form.instance.user = self.request.user
+    # Let the CreateView do its job as usual
+    return super().form_valid(form)
+
 def trips_index(request):
-    trips = Trip.objects.all()
+    trips = Trip.objects.filter(user=request.user)
     return render(request, 'trips/index.html', { 'trips': trips })
 
 def trips_detail(request, trip_id):

@@ -24,7 +24,7 @@ SECRET_KEY = 'yo(4=5tgh@&&r%+!m+(8+3djk9p!st1b08+(enyx4p%@y&p!l^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+    
 ALLOWED_HOSTS = []
 
 
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'wanderland.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wanderland',
+        'NAME': 'wander',
     }
 }
 
@@ -121,3 +121,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/trips/'
+
+LOGOUT_REDIRECT_URL = '/'

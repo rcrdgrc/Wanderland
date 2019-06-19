@@ -3,18 +3,13 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    email = models.CharField(max_length=100)
-
 class Trip(models.Model):
     destination = models.CharField(max_length=100)
     start_date = models.DateField('Start Date')
     end_date = models.DateField('End Date')
     budget = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
     def __str__(self):
         return self.destination
     
