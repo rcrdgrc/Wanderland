@@ -17,5 +17,22 @@
     </table>
     <input type="submit" value="Submit!" class="btn">
   </form>
-</div>
+  <script>
+      var startD = document.getElementById('id_start_date');
+      M.Datepicker.init(startD, {
+        format: 'yyyy-mm-dd',
+        defaultDate: new Date(),
+        setDefaultDate: false,
+        autoClose: true
+      });
+    </script>
+    <script>
+        var endDate = document.getElementById('id_end_date');
+        M.Datepicker.init(endDate, {
+          format: 'yyyy-mm-dd',
+          defaultDate: new Date(),
+          setDefaultDate: false,
+          autoClose: true
+        });
+      </script>
 {% endblock %}

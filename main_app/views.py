@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
 BUCKET = 'wanderland100'
 
+
 class TripUpdate(UpdateView):
   model = Trip
   # Let's make it impossible to rename a trip :)
@@ -42,6 +43,8 @@ def trips_detail(request, trip_id):
     savings_form = SavingsForm()
     return render(request, 'trips/detail.html', { 'trip': trip, 'savings_form': savings_form })
   
+def tasks_index(request):
+    return render(request, 'trips/taskpage.html', { 'tasks': tasks })
 
 def home(request):
     return render(request, 'home.html')
