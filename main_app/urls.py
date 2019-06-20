@@ -9,6 +9,8 @@ urlpatterns = [
   path('trips/<int:pk>/update/', views.TripUpdate.as_view(), name='trips_update'),
   path('trips/<int:pk>/delete/', views.TripDelete.as_view(), name='trips_delete'),
   path('tasks/', views.tasks_index, name='taskpage'),
+  path('trips/<int:trip_id>/add_tasks/', views.add_tasks, name='add_tasks'),
+
   path('trips/<int:trip_id>/add_savings/', views.add_savings, name='add_savings'),
   path('trips/<int:trip_id>/add_photo/', views.add_photo, name='add_photo'),
   path('accounts/', include('django.contrib.auth.urls')),
