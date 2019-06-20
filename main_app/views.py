@@ -3,7 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import uuid
 import boto3
 from .models import Trip, Photo, Task
-from .forms import SavingsForm
+from .forms import SavingsForm, TaskForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -39,13 +39,28 @@ def trips_index(request):
 
 
 def trips_detail(request, trip_id):
+    task_form = TaskForm()
     trip = Trip.objects.get(id=trip_id)
-   
     savings_form = SavingsForm()
-    return render(request, 'trips/detail.html', { 'trip': trip, 'savings_form': savings_form })
-  
+    return render(request, 'trips/detail.html', {
+      'trip': trip, 
+      'savings_form': savings_form, 
+      'task_form': task_form,  })
+
+def add_tasks(request, trip_id):
+  # create the ModelForm using the data in request.POST
+  form = TaskForm(request.POST)
+  # validate the form
+  if form.is_valid():
+    # don't save the form to the db until it
+    # has the cat_id assigned
+    new_task = form.save(commit=False)
+    new_task.trip_id = trip_id
+    new_task.save()
+  return redirect('detail', trip_id=trip_id)
+
 def tasks_index(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.filter(user=request.user)
     return render(request, 'trips/taskpage.html', { 'tasks': tasks })
 
 def home(request):

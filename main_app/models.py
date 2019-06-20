@@ -22,6 +22,14 @@ class Trip(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'trip_id': self.id})
 
+class Task(models.Model):
+    due_date = models.DateField('Due Date')
+    task = models.CharField(max_length=200)
+    trip = models.ForeignKey(Trip, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.task
+
 class Savings(models.Model):
     date = models.DateField()
     amount = models.IntegerField()
