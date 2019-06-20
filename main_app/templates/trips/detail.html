@@ -68,7 +68,7 @@
       {% for task in trip.task_set.all %}
         <tr>
           <td>{{task.due_date}}</td>
-          <td>${{task.task}}</td>
+          <td>{{task.task}}</td>
         </tr>
       {% endfor %}
     </tbody>
