@@ -7,6 +7,8 @@
 Wanderland was created by travel lovers for travel lovers. According to a study by [Applied Research in Quality of Life](https://link.springer.com/article/10.1007%2Fs11482-009-9091-9), the best part of a vacation isn't the actual vacation, but the planning of it. With Wanderland, you can experience endless happiness because you can use it as a goal visualizer as well as a tool to keep you on track. 
 
 ## Wireframes & Style Guide
+![wanderland wireframe](https://i.imgur.com/DifPGWg.png)
+![wanderland styleguide](https://i.imgur.com/fqOUn4K.png)
 
 ## How to Get to Wanderland
 [Wanderland](https://wanderland100.herokuapp.com/)
