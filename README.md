@@ -15,10 +15,8 @@ Wanderland was created by travel lovers for travel lovers. According to a study 
 
 ## Built With
 ![Django logo](https://i.imgur.com/LZiq72l.png)
-![Python logo]()
-![JavaScript logo]()
-![HTML5 logo]()
-![CSS3 logo]()
+![Python logo](https://i.imgur.com/J5yAp7d.png)
+![html css js logo](https://i.imgur.com/GHLMV0d.png)
 
 
 ## Built By Spice Squad
@@ -33,7 +31,7 @@ This project is only possible because of the folks at General Assembly. Without 
 
 ## Icebox Features
 * Travel Companion AI
- - Curated travel experiences
+  - Curated travel experiences
 * Savings and tasks reminders
 * Luxury scale support
 
