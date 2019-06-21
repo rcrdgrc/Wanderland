@@ -1,37 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Trip's Details</h1>
 
-<div class="row"></div>
+<div class="trip-detail">
     <div class="card">
+        <h1>Trip's Details</h1>
         <div class="card-content">
             {% for photo in trip.photo_set.all %}
               <img class="responsive-img card-panel" src="{{photo.url}}">
             {% empty %}
-              <div class="card-panel teal-text center-align">No Photos Uploaded</div>
-            {% endfor %}
-            <form action="{% url 'add_photo' trip.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
-              {% csrf_token %}
-              <input type="file" name="photo-file">
-              <br><br>
-              <input type="submit" class="btn" value="Upload Photo">
-          </form>
-            <span class="card-title">{{ trip.destination }}</span>
-            <p>Start Date: {{ trip.start_date }}</p>
-            <p>End Date: {{ trip.end_date}}</p>
-            {% if trip.budget > 0 %}
-                <p>Amount Needed: ${{ trip.budget }}</p>
-            {% else %}
-                <p>Amount Needed: Please update budget for better planning</p>
-            {% endif %}
-        </div>
-        <div class="card-action">
-            <a href="{% url 'trips_update' trip.id %}">Edit</a>
-            <a href="{% url 'trips_delete' trip.id %}">Delete</a>
+          <div class="photo-upload">No Photos Uploaded</div>
+              {% endfor %}
+              <form action="{% url 'add_photo' trip.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+                {% csrf_token %}
+                <input type="file" name="photo-file">
+                <br><br>
+                <input type="submit" class="btn" value="Upload Photo">
+              </form>
+              <span class="card-title">{{ trip.destination }}</span>
+              <p>Start Date: {{ trip.start_date }}</p>
+              <p>End Date: {{ trip.end_date}}</p>
+              {% if trip.budget > 0 %}
+                  <p>Amount Needed: ${{ trip.budget }}</p>
+              {% else %}
+                  <p>Amount Needed: Please update budget for better planning</p>
+              {% endif %}
+          </div>
+            <div class="card-action">
+                <a href="{% url 'trips_update' trip.id %}">Edit</a>
+                <a href="{% url 'trips_delete' trip.id %}">Delete</a>
+            </div>
         </div>
     </div>
 </div>
+
 <div class="col s6">
     <table class="striped">
       <thead>
@@ -57,7 +59,7 @@
       </tbody>
     </table>
   </div>
-</div>
+<!-- </div> -->
 <div class="col s6">
   <table class="striped">
     <thead>
