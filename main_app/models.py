@@ -4,6 +4,12 @@ from django.contrib.auth.models import User
 from django.db.models import Count
 
 
+class Task(models.Model):
+    due_date = models.DateField('Due Date')
+    task = models.CharField(max_length=200)
+   
+    def __str__(self):
+        return self.task
 
 class Trip(models.Model):
     destination = models.CharField(max_length=100)
