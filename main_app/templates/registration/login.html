@@ -4,6 +4,7 @@
 <div class="log-in">
         <form method="post" action="{% url 'login' %}">
                 <div class="con">
+                    {% csrf_token %}
                     <header class="head-form">
                         <h2>Log In</h2>
                         <br>

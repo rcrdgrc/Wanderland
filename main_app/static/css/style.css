@@ -40,12 +40,13 @@ STYLING */
   list-style: none; 
   display: inline-block;
   vertical-align: middle; /*add this line*/
-  padding: 0px 250px;
+  padding: 0px 50px;
 }
 
 #nav a {
   color: white; 
-  display: block; 
+  display: flex;
+  flex-direction: row; 
   font-family: arial; 
   text-transform: uppercase; 
   font-weight: bold; 
@@ -60,7 +61,7 @@ STYLING */
 }
 
 /* *********** media queries *********** */
-@media all and (max-width: 990px) {
+@media all and (max-width: 1024px) {
   .flex-container {
     flex-direction: column;
   }
