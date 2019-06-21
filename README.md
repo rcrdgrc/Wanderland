@@ -1,7 +1,10 @@
 # Wanderland
+![wanderland mockup](https://i.imgur.com/7QnWP5d.jpg)
+
 ![wanderland logo](https://i.imgur.com/52S6vna.png)
 
 ## How to Get to Wanderland
+[Wanderland](https://wanderland100.herokuapp.com/)
 
 ## Built With
 ![Django logo](https://i.imgur.com/LZiq72l.png)
