@@ -42,6 +42,18 @@ def trips_detail(request, trip_id):
     trip = Trip.objects.get(id=trip_id)
     savings_form = SavingsForm()
     return render(request, 'trips/detail.html', { 'trip': trip, 'savings_form': savings_form })
+
+def add_tasks(request, trip_id):
+ # create the ModelForm using the data in request.POST
+ form = TaskForm(request.POST)
+ # validate the form
+ if form.is_valid():
+   # don't save the form to the db until it
+   # has the cat_id assigned
+   new_task = form.save(commit=False)
+   new_task.trip_id = trip_id
+   new_task.save()
+ return redirect('detail', trip_id=trip_id)
   
 def tasks_index(request):
     return render(request, 'trips/taskpage.html', { 'tasks': tasks })
