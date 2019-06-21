@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.db.models import Count
+
 
 
 class Trip(models.Model):
@@ -35,6 +37,7 @@ class Savings(models.Model):
     
     class Meta:
         ordering = ['date']
+    
 
 class Photo(models.Model):
     url = models.CharField(max_length=200)

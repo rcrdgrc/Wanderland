@@ -8,6 +8,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
+
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
 BUCKET = 'wanderland100'
 
@@ -36,7 +37,6 @@ class TripCreate(CreateView):
 def trips_index(request):
     trips = Trip.objects.filter(user=request.user)
     return render(request, 'trips/index.html', { 'trips': trips })
-
 
 def trips_detail(request, trip_id):
     task_form = TaskForm()

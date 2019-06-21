@@ -50,7 +50,11 @@
           </tr>
         {% endfor %}
       </tbody>
-      <td>Total{{savings.amount}}</td>
+      <tbody>
+      
+        Total:  <td>{{trip.savings}}</td>
+      
+      </tbody>
     </table>
   </div>
 </div>
@@ -74,6 +78,15 @@
     </tbody>
   </table>
 </div>
+<script>
+    var dateE = document.getElementById('id_due_date');
+    M.Datepicker.init(dateE, {
+      format: 'yyyy-mm-dd',
+      defaultDate: new Date(),
+      setDefaultDate: false,
+      autoClose: true
+    });
+  </script>
 
 <script>
   var dateEl = document.getElementById('id_date');
