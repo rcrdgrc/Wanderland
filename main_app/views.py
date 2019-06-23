@@ -38,6 +38,7 @@ def trips_index(request):
     trips = Trip.objects.filter(user=request.user)
     return render(request, 'trips/index.html', { 'trips': trips })
 
+@login_required
 def trips_detail(request, trip_id):
     task_form = TaskForm()
     trip = Trip.objects.get(id=trip_id)
@@ -47,6 +48,7 @@ def trips_detail(request, trip_id):
       'savings_form': savings_form, 
       'task_form': task_form,  })
 
+@login_required
 def add_tasks(request, trip_id):
   # create the ModelForm using the data in request.POST
   form = TaskForm(request.POST)
@@ -59,6 +61,7 @@ def add_tasks(request, trip_id):
     new_task.save()
   return redirect('detail', trip_id=trip_id)
 
+@login_required
 def tasks_index(request):
     tasks = Task.objects.filter(user=request.user)
     return render(request, 'trips/taskpage.html', { 'tasks': tasks })
