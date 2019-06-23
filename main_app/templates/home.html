@@ -1,16 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-    <!-- hero image -->
-      <section class="hero">
-          <div class="hero-container">
-            <h1>Life Happens</h1>
-            <h2>Wanderland makes adventure happen</h2>
-            <a href="{% url 'signup' %}" class="btn-get-started">Get Started</a>
-          </div>
-      </section>
-    <!-- #hero -->
-
+     
+<div style = "background: url('https://i.imgur.com/rqk6pfg.jpg'); height: 800px;  background-size: 100% 100%; " >
+  <div class="homew">
+    <br>
+      <h1>Life Happens</h1>
+      <h2>Wanderland makes adventure happen</h2>
+      <br>
+      <a href="{% url 'signup' %}" class="waves-effect blue lighten-1 btn">Get Started</a> 
+     </div>
+</div>
+          
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems);
+  });
+</script>
 
 {% endblock %}
