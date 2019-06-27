@@ -1,24 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="log-in">
-        <form method="post" action="{% url 'login' %}">
-                <div class="con">
-                    {% csrf_token %}
-                    <header class="head-form">
-                        <h2>Log In</h2>
-                        <br>
-                        <p>If you don't already have an account, please sign up.</p>
-                    </header>
-                    <div class="field-set">
-                        {{ form.as_p }}
-                        <input type="submit" class="btn" value="Login">
-                        <input type="hidden" name="next" value="{{ next }}">
-                        <button href="{% url 'signup' %}">Sign Up</button>
-                        
-                    </div>
-                </div>
-            </form>
-</div>
+<h1>Log In</h1>
+
+<!-- Add the login form -->
+<form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" class="btn" value="login">
+  <input type="hidden" name="next" value="{{ next }}">
+</form>
 
 {% endblock %}
