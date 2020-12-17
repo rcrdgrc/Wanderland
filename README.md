@@ -18,11 +18,10 @@ Wanderland was created by travel lovers for travel lovers. According to a study 
 
 
 ## Built By Spice Squad
-![portraits of design and development team](https://i.imgur.com/awEDGkS.png)
 * Visual Designer: [Alejandra Hinojosa](https://www.google.com)
 * Interaction Designer: [Sylvia Kim](https://www.google.com)
 * Front-end Developer: [Somjit Pimson](http://www.somjitpimson.com/)
-* Back-end Developer: [Ricardo Garcia](https://www.google.com)
+* Full-Stack Developer: [Ricardo Garcia](https://www.google.com)
 
 ## Acknowledgements
 This project is only possible because of the folks at General Assembly. Without you all, there would be no Spice Squad. 
